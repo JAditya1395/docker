@@ -1,0 +1,35 @@
+   27  sudo yum install -y yum-utils   device-mapper-persistent-data   lvm2
+   28  sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+   29  sudo yum install docker-ce docker-ce-cli containerd.io
+   30  sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.68-1.el7.noarch.rpm
+   31  sudo yum install docker-ce docker-ce-cli containerd.io
+  168  service docker start
+  169  docker ps
+  170  docker ps
+  171  docker run -d --name=redis redis
+  172  docker ps
+  173  docker run -d --name=db postgres:9.4
+  174  docker
+  175  docker ps
+  176  docker run -d name=vote -p 5000:80 --link redis:redis voting-app
+  177  docker run -d --name=vote -p 5000:80 --link redis:redis voting-app
+  178  docker run voting-app
+  179  df -h
+  180  free -m
+  181  docker login
+  182  docker login
+  183  docker run -d --name=vote -p 5000:80 --link redis:redis voting-app
+  184  docker run -d --name=result -p 5001:80 --link db:db result-app
+  185  docker pull docker/example-voting-app-result
+  186  docker pull docker/example-voting-app-vote
+  187  docker pull docker/example-voting-app-worker
+  188  docker logout
+  189  docker login
+  190  docker images
+  191  docker run -d --name=vote -p 5000:80 --link redis:redis docker/example-voting-app-vote
+  192  docker ps
+  193  docker run -d --name=result -p 5001:80 --link db:db docker/example-voting-app-result
+  194  docker run -d --name=worker  --link db:db ---link redis:redis  docker/example-voting-app-worker
+  195  docker run -d --name=worker  --link db:db --link redis:redis  docker/example-voting-app-worker
+  196  docker ps
+
